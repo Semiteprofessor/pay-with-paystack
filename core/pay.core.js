@@ -3,7 +3,7 @@ const paystack = require("../paystack/pay.paystack");
 const initializePayment = async (req, res) => {
   const { email, amount } = req.body;
   try {
-    const response = await paystack.initializePayment(email, account);
+    const response = await paystack.initializePayment(email, amount);
     res.json(response);
   } catch (error) {
     res.status(500).json({ error: error.message });

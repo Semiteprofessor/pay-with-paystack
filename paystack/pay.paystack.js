@@ -12,6 +12,7 @@ const paystack = {
     try {
       const response = await axios.post(url, data, {
         headers: {
+          "Content-Type": "application/json",
           Authorization: `Bearer ${process.env.PAYSTACK_SECRET_KEY}`,
         },
       });
@@ -28,6 +29,7 @@ const paystack = {
     try {
       const response = await axios.get(url, {
         headers: {
+          "Content-Type": "application/json",
           Authorization: `Bearer ${process.env.PAYSTACK_SECRET_KEY}`,
         },
       });
